@@ -25,7 +25,7 @@
 import Foundation
 import StoreKit
 
-protocol InAppProductRequestBuilder: class {
+protocol InAppProductRequestBuilder: AnyObject {
     func request(productIds: Set<String>, callback: @escaping InAppProductRequestCallback) -> InAppProductRequest
 }
 
@@ -51,7 +51,8 @@ class ProductsInfoController: NSObject {
     // As we can have multiple inflight requests, we store them in a dictionary by product ids
     private var inflightRequests: [Set<String>: InAppProductQuery] = [:]
 
-    func retrieveProductsInfo(_ productIds: Set<String>, completion: @escaping (RetrieveResults) -> Void) {
+    @discardableResult
+    func retrieveProductsInfo(_ productIds: Set<String>, completion: @escaping (RetrieveResults) -> Void) -> InAppProductRequest {
 
         if inflightRequests[productIds] == nil {
             let request = inAppProductRequestBuilder.request(productIds: productIds) { results in
@@ -68,8 +69,22 @@ class ProductsInfoController: NSObject {
             }
             inflightRequests[productIds] = InAppProductQuery(request: request, completionHandlers: [completion])
             request.start()
+
+            return request
+
         } else {
+            
             inflightRequests[productIds]!.completionHandlers.append(completion)
+
+            let query = inflightRequests[productIds]!
+
+            if query.request.hasCompleted {
+                query.completionHandlers.forEach {
+                    $0(query.request.cachedResults!)
+                }
+            }
+
+            return inflightRequests[productIds]!.request
         }
     }
 }

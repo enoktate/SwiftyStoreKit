@@ -1,8 +1,9 @@
 //
-//  OS.swift
+//  SwiftyStoreKit-watchOS.h
 //  SwiftyStoreKit
 //
-// Copyright (c) 2015 Andrea Bizzotto (bizz84@gmail.com)
+//  Created by Sam Spencer on 5/29/20.
+//  Copyright © 2020 Sam Spencer. All rights reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,14 +23,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import StoreKit
+#import <UIKit/UIKit.h>
+#import <WatchKit/WatchKit.h>
+#import <StoreKit/StoreKit.h>
 
-// MARK: - missing SKMutablePayment init with product on OSX
-#if os(OSX)
-    extension SKMutablePayment {
-        convenience init(product: SKProduct) {
-            self.init()
-            self.productIdentifier = product.productIdentifier
-        }
-    }
-#endif
+//! Project version number for SwiftyStoreKit.
+FOUNDATION_EXPORT double SwiftyStoreKitVersionNumber;
+
+//! Project version string for SwiftyStoreKit.
+FOUNDATION_EXPORT const unsigned char SwiftyStoreKitVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <SwiftyStoreKit/PublicHeader.h>
+
+

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "654287ED1E79F5A000F61800"
-               BuildableName = "SwiftyStoreKit_tvOSDemo.app"
-               BlueprintName = "SwiftyStoreKit_tvOSDemo"
+               BlueprintIdentifier = "A61BF4C42481F4970017D9BC"
+               BuildableName = "SwiftyStoreKit.framework"
+               BlueprintName = "SwiftyStoreKit_watchOS"
                ReferencedContainer = "container:SwiftyStoreKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -27,15 +27,6 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "654287ED1E79F5A000F61800"
-            BuildableName = "SwiftyStoreKit_tvOSDemo.app"
-            BlueprintName = "SwiftyStoreKit_tvOSDemo"
-            ReferencedContainer = "container:SwiftyStoreKit.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <Testables>
       </Testables>
    </TestAction>
@@ -49,16 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "654287ED1E79F5A000F61800"
-            BuildableName = "SwiftyStoreKit_tvOSDemo.app"
-            BlueprintName = "SwiftyStoreKit_tvOSDemo"
-            ReferencedContainer = "container:SwiftyStoreKit.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -66,16 +47,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "654287ED1E79F5A000F61800"
-            BuildableName = "SwiftyStoreKit_tvOSDemo.app"
-            BlueprintName = "SwiftyStoreKit_tvOSDemo"
+            BlueprintIdentifier = "A61BF4C42481F4970017D9BC"
+            BuildableName = "SwiftyStoreKit.framework"
+            BlueprintName = "SwiftyStoreKit_watchOS"
             ReferencedContainer = "container:SwiftyStoreKit.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
